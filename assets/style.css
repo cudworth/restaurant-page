@@ -1,0 +1,17 @@
+div{
+    width: 80vw;
+}
+
+.title{
+    font-size: 6vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    font-weight: 600;
+    font-style: italic;
+    margin: 2vh;
+}
+
+.banner{
+    width: 100vw;
+    max-height: 20vh;
+}
