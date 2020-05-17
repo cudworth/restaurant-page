@@ -1,26 +1,41 @@
 const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
-const landingPage = (function(){
+const template = (function(){
     const render = function(parent){
+        const root = _createElement(parent, 'div', {id:'root'})
 
-        const nav_bar = _createElement(parent, 'nav', {class:'navbar'});
+        const banner_img = _createElement(root, 'img', {id:'banner_img', src:'../assets/banner.png'});
 
-        const main_link = _createElement(nav_bar, 'a', {});
-        main_link.textContent = 'Main';
+        const header = _createElement(root, 'div',{id:'header'});
 
-        const menu_link = _createElement(nav_bar, 'a', {});
+        const title = _createElement(header, 'div', {class: 'title'});
+        title.textContent = 'The Fig Leaf Cafe';
+      
+        const icon = _createElement(header, 'img', {class:'icon', src:'../assets/noun_fig_1510215.svg'});
+
+        const nav_bar = _createElement(header, 'nav', {id:'navbar'});
+
+        const home_link = _createElement(nav_bar, 'a', {class: 'navlink'});
+        home_link.textContent = 'Home';
+
+        const menu_link = _createElement(nav_bar, 'a', {class: 'navlink'});
         menu_link.textContent = 'Menu';
 
-        const contact_link = _createElement(nav_bar, 'a', {});
-        contact_link.textContent = 'Contact us';
+        const contact_link = _createElement(nav_bar, 'a', {class: 'navlink'});
+        contact_link.textContent = 'Contact';
 
 
-        const banner_img = _createElement(parent, 'img', {class:'banner', src:'../assets/banner.png'});
-        
-        const header = _createElement(parent, 'div', {class: 'title'})
-        header.textContent = 'The Fig Leaf Cafe';
+        const content_container = _createElement(root, 'div', {id:'container'});
 
-        const txt = _createElement(parent, 'div', {class:'mytextbox', id:'a420'});
+        return content_container;
+    };
+    return {render};
+})();
+
+const homePage = (function(){
+    const render = function(parent){
+
+        const txt = _createElement(parent, 'div', {class:'mytextbox', id:'homepage'});
         txt.textContent = lorem;
 
     };
@@ -60,7 +75,8 @@ const _createElement = function(parent, type, attrs){
 
 
 export {
-    landingPage,
+    template,
+    homePage,
     contactPage,
     menuPage
 };
