@@ -1,5 +1,5 @@
 body{
-    background-color: black;
+    background-color:#53003E;    
     height: 100vh;
     width: 100vw;
 }
@@ -41,8 +41,8 @@ body{
     
     font-size: 24px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
     color: black;
-    font-weight: 600;
     margin-inline: 18px;
 
     display: block;
@@ -63,12 +63,16 @@ body{
 }
 
 .navlink{
+
+    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-inline:18px;
+    display: inline-block;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 18px;
-    font-style: italic;
-    margin-inline:18px;
+    color: black;
     
 }
 
@@ -78,6 +82,12 @@ body{
 }
 
 #container{
-    width: 100%;
     position: relative;
+    width: auto;
+    padding: 24px;
+    color: rgb(54, 69, 79);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
 }
