@@ -28,8 +28,6 @@ const template = (function(){
         contact_link.textContent = 'Contact';
         contact_link.addEventListener('click', () => contactPage.render(content_container));
 
-
-
         const content_container = _createElement(root, 'div', {id:'container'});
 
         return content_container;
@@ -40,9 +38,8 @@ const template = (function(){
 const homePage = (function(){
     const render = function(parent){
         parent.innerHTML = '';
-        const txt = _createElement(parent, 'div', {class:'mytextbox', id:'homepage'});
-        txt.textContent = lorem;
-
+        const txt = _createElement(parent, 'p', {class:'about'});
+        txt.textContent = lorem+lorem+lorem+lorem+lorem+lorem;
     };
     return {render};
 })();
@@ -51,12 +48,15 @@ const homePage = (function(){
 const contactPage = (function(){
     const render = function(parent){
         parent.innerHTML = '';
-        const contact = {
-            Name: 'John Doe',
-            Address: '1 Main Street, Seattle, WA',
-            Phone: '867-5309',
-            Email: 'johndoe@figleafcafe.com',
-        };
+
+        const contact = [
+            'The Fig Leaf Cafe',
+            '1 Main Street, Seattle, WA',
+            '867-5309',
+            'johndoe@figleafcafe.com',
+        ];
+
+        contact.forEach((line) => _createElement(parent,'p',{class:'contactinfo'}).textContent = line);
 
     };
     return {render};
@@ -65,8 +65,15 @@ const contactPage = (function(){
 
 const menuPage = (function(){
     const render = function(parent){
-        const cheezewhiz = _menuItem('Cheese Wiz', 'Delectable, creamy cheese whiz', '$3.50');
+        parent.innerHTML = '';
+        const cheezewhiz = _menuItem('Cheese Platter', 'Generous portion of mozarella cheese slices with a side spread of CheezeWiz', '$3.50');
+        const spaghettios = _menuItem('')
+        const breakfastcereal = _menuItem('Breakfast Option', 'A freshly poured bowl of Fruit Loops with whole milk made from happy cows in Wisconsin', '$4.95');
+        const pulledpork = _menuItem('BBQ Platter','3-1/2lbs of protein-free pulled pork with a side of lentil fries','$22.00');
         cheezewhiz.render(parent);
+        spaghettios.render(parent);
+        breakfastcereal.render(parent);
+        pulledpork.render(parent);
     };
     return {render};
 })();
@@ -85,11 +92,10 @@ const _createElement = function(parent, type, attrs){
 const _menuItem = function(name, desc, price){
 
     const render = function(parent){
-        parent.innerHTML = '';
         const menu_item = _createElement(parent, 'div', {class:'menuitem'});
         _createElement(menu_item, 'h1',{}).textContent = name;
-        _createElement(menu_item, 'h2',{}).textContent = desc;
-        _createElement(menu_item, 'h3',{}).textContent = price;
+        _createElement(menu_item, 'p',{}).textContent = desc;
+        _createElement(menu_item, 'p',{}).textContent = price;
     }
     return {render}
 }

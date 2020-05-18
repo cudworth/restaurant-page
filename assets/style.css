@@ -14,9 +14,6 @@ body{
     width: 96vw;
 }
 
-#container{
-    overflow: scroll;
-}
 
 #banner_img{
     width: 100%;
@@ -90,4 +87,31 @@ body{
     font-size: 18px;
     margin-left: auto;
     margin-right: auto;
+}
+
+h1{
+    width: 67%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-block: 24px;
+    font-weight: 700;
+}
+
+p{
+    width:67%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-block: 18px;
+}
+
+.menuitem{
+    margin-block: 36px;
+}
+
+.about{
+    width: 80%;
+    margin-block: 36px;
+    text-align: left;
 }
