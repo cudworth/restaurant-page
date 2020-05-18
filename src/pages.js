@@ -62,7 +62,6 @@ const contactPage = (function(){
     return {render};
 })();
 
-
 const menuPage = (function(){
     const render = function(parent){
         parent.innerHTML = '';
